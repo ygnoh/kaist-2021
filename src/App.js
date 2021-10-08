@@ -120,13 +120,17 @@ const Input = observer(class Input extends React.Component {
     };
 });
 
-const store = new Store();
-
 class Todo extends React.PureComponent {
+    constructor(props) {
+        super(props);
+
+        this._store = new Store();
+    }
+
     render() {
         return (
             <div>
-                <StoreContext.Provider value={store}>
+                <StoreContext.Provider value={this._store}>
                     <Input />
                     <Items />
                     <Bottom />
