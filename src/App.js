@@ -125,11 +125,13 @@ const store = new Store();
 class Todo extends React.Component {
     render() {
         return (
-            <StoreContext.Provider value={store}>
-                <Input />
-                <Items />
-                <Bottom />
-            </StoreContext.Provider>
+            <div>
+                <StoreContext.Provider value={store}>
+                    <Input />
+                    <Items />
+                    <Bottom />
+                </StoreContext.Provider>
+            </div>
         );
     }
 }
