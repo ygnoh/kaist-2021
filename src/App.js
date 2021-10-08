@@ -122,7 +122,7 @@ const Input = observer(class Input extends React.Component {
 
 const store = new Store();
 
-class Todo extends React.Component {
+class Todo extends React.PureComponent {
     render() {
         return (
             <div>
@@ -136,4 +136,4 @@ class Todo extends React.Component {
     }
 }
 
-export default observer(Todo);
+export default Todo;
