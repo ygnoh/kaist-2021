@@ -115,7 +115,7 @@ const Input = observer(() => {
 });
 
 const Todo = observer(() => {
-    const store = useMemo(() => new Store(), []);
+    const [store] = useState(() => new Store());
 
     return (
         <div>
