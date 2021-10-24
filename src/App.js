@@ -3,7 +3,7 @@ import {observer} from "mobx-react";
 import {Store, StoreContext} from "./store";
 
 const TABS = ["all", "active", "completed"];
-const Tabs = observer(() => {
+const Tabs = observer(function Tabs() {
     const store = useContext(StoreContext);
     const handleChange = useCallback(
         e => {
@@ -30,7 +30,7 @@ const Tabs = observer(() => {
         </>
     );
 });
-const Bottom = observer(() => {
+const Bottom = observer(function Bottom() {
     const store = useContext(StoreContext);
     const {remains} = store;
     const handleClear = useCallback(
@@ -48,7 +48,7 @@ const Bottom = observer(() => {
         </div>
     );
 });
-const Item = observer(({item}) => {
+const Item = observer(function Item({item}) {
     const {id, title, done} = item;
     const handleChange = useCallback(
         () => {
@@ -69,7 +69,7 @@ const Item = observer(({item}) => {
     );
 
 });
-const Items = observer(() => {
+const Items = observer(function Items() {
     const store = useContext(StoreContext);
     const {items} = store;
 
@@ -79,7 +79,7 @@ const Items = observer(() => {
         </ul>
     );
 });
-const Input = observer(() => {
+const Input = observer(function Input() {
     const store = useContext(StoreContext);
     const [value, setValue] = useState("");
     const handleChange = useCallback(
@@ -114,7 +114,7 @@ const Input = observer(() => {
     );
 });
 
-const Todo = observer(() => {
+const Todo = observer(function Todo() {
     const [store] = useState(() => new Store());
 
     return (
